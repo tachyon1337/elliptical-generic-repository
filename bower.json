@@ -1,0 +1,26 @@
+{
+  "name": "elliptical-generic-repository",
+  "description": "Javascript Generic Repository",
+  "version":"1.0.0"
+  "main": "dist/elliptical.generic.repository.js",
+  "authors": [
+    "S. Francis"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "generic",
+    "repository"
+  ],
+  "moduleType": [],
+  "homepage": "https://github.com/tachyon1337/elliptical-generic-repository",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "elliptical-lodash": "~1.0.2"
+  }
+}
