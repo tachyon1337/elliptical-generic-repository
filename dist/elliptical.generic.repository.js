@@ -118,29 +118,32 @@
             if(resource && typeof resource==='object'){
                 callback=query;
                 query=resource;
+            }else if(resource && typeof resource==='function'){
+                callback=resource;
+                resource=null;
             }
             var model=this.model;
             var result;
             if(params && params.id){
                 result= _get(model,params.id);
 
-            }else if(query.filter && query.filter !==undefined){
+            }else if(query && query.filter && query.filter !==undefined){
                 result=this.query(query.filter);
             }else{
                 result= model;
             }
 
-            if(query.orderBy && query.orderBy !==undefined){
+            if(query && query.orderBy && query.orderBy !==undefined){
                 result=this.orderBy(result,query.orderBy);
             }
 
-            if(query.orderByDesc && query.orderByDesc !==undefined){
+            if(query && query.orderByDesc && query.orderByDesc !==undefined){
                 result=this.orderByDesc(result,query.orderByDesc);
             }
 
 
-            if(query.paginate){
-               result=this.paginate(result,query.paginate);
+            if(query && query.paginate){
+                result=this.paginate(result,query.paginate);
             }
 
             if(this.callback){
